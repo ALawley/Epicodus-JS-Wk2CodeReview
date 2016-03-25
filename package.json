@@ -1,5 +1,5 @@
 {
-  "name": "angular-todo",
+  "name": "meal-tracker",
   "version": "1.0.0",
   "scripts": {
     "start": "npm run tsc:w",
