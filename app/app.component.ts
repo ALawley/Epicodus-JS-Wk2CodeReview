@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
   selector: 'my-app',
   template: `
     <div class="container">
-      <day-list [dayList]="days"></day-list>
+      <day-list [dayList]="days" [mealList]="meals"></day-list>
     </div>
   `
 })
