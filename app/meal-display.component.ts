@@ -15,7 +15,7 @@ import { MealDetailsComponent } from './meal-details.component';
 
 export class MealDisplayComponent {
   public meal: Meal;
-  public detailssShow: boolean = false;
+  public detailsShow: boolean = false;
   dayClicked(): void {
     this.detailsShow = !this.detailsShow;
   }
