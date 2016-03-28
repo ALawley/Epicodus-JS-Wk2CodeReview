@@ -2,15 +2,14 @@ import { Pipe, PipeTransform } from 'angular2/core';
 import { Meal } from './meal.model';
 
 @Pipe({
-  name: "daypipe",
+  name: "delete",
   pure: false
 })
 
-export class DayPipe implements PipeTransform {
+export class DeletePipe implements PipeTransform {
   transform(input: Meal[], args) {
-    var desiredDay = args[0];
     return input.filter((meal) => {
-      if (meal.day === desiredDay) {
+      if (!meal.delete) {
         return true;
       }
     });

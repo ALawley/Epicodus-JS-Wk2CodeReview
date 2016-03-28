@@ -1,21 +1,21 @@
 import { Component } from 'angular2/core';
 import { Meal } from './meal.model';
 import { Day } from './day.model';
-import { MealDisplayComponent } from './meal-display.component';
+import { MealToggleComponent } from './meal-toggle.component';
 
 @Component({
   selector: 'day-display',
-  inputs: ['day', 'meals'],
-  directives: [MealDisplayComponent],
+  inputs: ['day', 'mealList'],
+  directives: [MealToggleComponent],
   template: `
-    <h3 (click)="dayClicked()">{{ day.name }} - {{ day.totalCalories() }} calories</h3>
-    <meal-display *ngIf="mealsShow" *ngFor="#currentMeal of meals" [meal]="currentMeal"></meal-display>
+    <h2 (click)="dayClicked()">{{ day.name }} - {{ day.totalCalories(mealList) }} calories</h2>
+    <meal-toggle *ngIf="mealsShow" [mealList]="mealList"></meal-toggle>
   `
 })
 
 export class DayDisplayComponent {
   public day: Day;
-  public meals: Meal[];
+  public mealList: Meal[];
   public mealsShow: boolean = false;
   dayClicked(): void {
     this.mealsShow = !this.mealsShow;
