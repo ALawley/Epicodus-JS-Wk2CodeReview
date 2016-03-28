@@ -1,10 +1,12 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { Meal } from './meal.model';
+import { DaysSelectComponent } from './days-select.component';
 
 @Component({
   selector: 'edit-meal-details',
   inputs: ['meal'],
   outputs: ['onEndEdit'],
+  directives: [DaysSelectComponent],
   template: `
     <div class="meal-form">
       <h4>Edit Meal Information</h4>
