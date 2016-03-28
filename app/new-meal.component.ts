@@ -32,7 +32,6 @@ export class NewMealComponent {
     newMealInputs.push(parseInt(newCalories.value));
     newMealInputs.push(newDetails.value);
     newMealInputs.push(this.newMealDay);
-    console.log(newMealInputs);
     this.onSubmitNewMeal.emit(newMealInputs);
   }
   setDay(dayValue: string) {

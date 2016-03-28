@@ -21,10 +21,16 @@ export class DayListComponent {
   public dayList: Day[];
   public mealList: Meal[];
   createMeal(userInputArray: any[]): void {
-    console.log(userInputArray);
     this.mealList.push(
       new Meal(userInputArray[0], userInputArray[1], userInputArray[2], userInputArray[3])
     );
-    console.log(this.mealList);
+    this.cleanup();
+  }
+  cleanup(): void {
+    for (var i: number = 0; i < this.mealList.length; i++) {
+      if (this.mealList[i].delete) {
+        this.mealList.splice(i, 1);
+      }
+    }
   }
 }
